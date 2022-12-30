@@ -3,23 +3,19 @@
 class Artigo
 {
 
+    private $mysql;
+
+    public function __construct(mysqli $mysql)
+    {
+        $this->mysql = $mysql;
+    }
+
     public function getArtigos(): array
     {
-        $artigos = [
+        $resultado = $this->mysql->query('SELECT * FROM artigos');
 
-            [
-                'titulo' => 'Primeiros passos com Spring',
-                'conteudo' => 'Na empresa onde trabalho começamos um Coding Dojo, que é
-			basicamente uma reunião com programadores e programadoras a fim de
-			resolver desafios e aperfeiçoar as habilidades com algoritmos.',
-                'link' => 'primeiros-passos-com-spring.html'
-            ],
-            [
-                'titulo' => 'xxxxx',
-                'conteudo' => 'yyyy',
-                'link' => 'primeiros-passos-com-spring.html'
-            ]
-        ];
+        $artigos = $resultado->fetch_all(MYSQLI_ASSOC);
+
         return $artigos;
     }
 }

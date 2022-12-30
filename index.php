@@ -1,8 +1,11 @@
 <?php
 include 'Artigo.php';
+include 'config.php';
 
-$artigo = new Artigo();
+
+$artigo = new Artigo($mysql);
 $artigos = $artigo->getArtigos();
+
 
 ?>
 
