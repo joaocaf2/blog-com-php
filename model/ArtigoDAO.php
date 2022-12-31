@@ -41,4 +41,18 @@ class ArtigoDAO
         $queryInsere->bind_param('ss', $titulo, $conteudo);
         $queryInsere->execute();
     }
+
+
+    public function alterar($id)
+    {
+        $queryInsere = $this->mysql->prepare("UPDATE artigos SET titulo=?, conteudo=? WHERE id = ?");
+        $queryInsere->bind_param('sss', $titulo, $conteudo, $id);
+        $queryInsere->execute();
+    }
+    public function excluir($id)
+    {
+        $queryInsere = $this->mysql->prepare("DELETE from artigos WHERE id = ?");
+        $queryInsere->bind_param('s', $id);
+        $queryInsere->execute();
+    }
 }
