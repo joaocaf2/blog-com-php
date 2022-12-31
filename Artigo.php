@@ -1,6 +1,6 @@
 <?php
 require 'config.php';
-require 'src/ArtigoDAO.php';
+require 'model/ArtigoDAO.php';
 
 $artigoDAO = new ArtigoDAO($mysql);
 $artigo = $artigoDAO->findById($_GET['id']);

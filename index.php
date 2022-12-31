@@ -1,8 +1,8 @@
 <?php
-include 'src/Artigo.php';
+include 'model/ArtigoDAO.php';
 include 'config.php';
 
-$artigo = new Artigo($mysql);
+$artigo = new ArtigoDAO($mysql);
 $artigos = $artigo->getArtigos();
 
 ?>

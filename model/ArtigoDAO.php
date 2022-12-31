@@ -33,4 +33,12 @@ class ArtigoDAO
         $resultado = $this->mysql->query($query);
         return $resultado;
     }
+
+
+    public function insere(string $titulo, string $conteudo)
+    {
+        $queryInsere = $this->mysql->prepare("INSERT INTO artigos (titulo,conteudo) VALUES (?,?);");
+        $queryInsere->bind_param('ss', $titulo, $conteudo);
+        $queryInsere->execute();
+    }
 }
