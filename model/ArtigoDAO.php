@@ -43,11 +43,12 @@ class ArtigoDAO
     }
 
 
-    public function alterar($id)
+    public function alterar($titulo, $conteudo, $id)
     {
-        $queryInsere = $this->mysql->prepare("UPDATE artigos SET titulo=?, conteudo=? WHERE id = ?");
-        $queryInsere->bind_param('sss', $titulo, $conteudo, $id);
-        $queryInsere->execute();
+        $query = $this->mysql->prepare("UPDATE artigos SET titulo = ?,
+        conteudo = ? WHERE id = ?");
+        $query->bind_param("sss", $titulo, $conteudo, $id);
+        $query->execute();
     }
     public function excluir($id)
     {

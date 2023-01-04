@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $artigoDAO = new ArtigoDAO($mysql);
     if (!(empty($_POST['titulo']) || empty($_POST['conteudo']))) {
         $artigoDAO->insere($_POST['titulo'], $_POST['conteudo']);
-        header("location: adicionar-artigo.php"); // Adiciona um cabeçalho de redirect.
+        header("location: /blog/admin/index.php"); // Adiciona um cabeçalho de redirect.
         die(); // Interrompe a execução do código
     }
 
