@@ -1,4 +1,8 @@
 <?php
+
+use blog\model\ArtigoDAO;
+
+
 include '../model/ArtigoDAO.php';
 include '../config.php';
 

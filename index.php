@@ -1,4 +1,9 @@
 <?php
+
+namespace blog;
+
+use blog\model\ArtigoDAO;
+
 include 'model/ArtigoDAO.php';
 include 'config.php';
 
@@ -30,8 +35,6 @@ $artigos = $artigo->getArtigos();
 		<p><?php echo $artigo['conteudo'] ?></p>
 
 		<?php endforeach; ?>
-		<p>Minha amiga que possui um clube de assinaturas começou a utilizar o
-			Growth Hacking após conhecer um pouco mais sobre ele.</p>
 	</div>
 </body>
 

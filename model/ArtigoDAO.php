@@ -1,5 +1,9 @@
 <?php
 
+namespace blog\model;
+
+use Mysqli;
+
 class ArtigoDAO
 {
 

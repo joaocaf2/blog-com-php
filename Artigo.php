@@ -1,6 +1,11 @@
 <?php
+
+use blog\model\ArtigoDAO;
+
 require 'config.php';
 require 'model/ArtigoDAO.php';
+
+
 
 $artigoDAO = new ArtigoDAO($mysql);
 $artigo = $artigoDAO->findById($_GET['id']);

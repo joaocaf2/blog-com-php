@@ -1,5 +1,7 @@
 <?php
 
+use blog\model\ArtigoDAO;
+
 require '../config.php';
 require '../model/ArtigoDAO.php';
 
